@@ -12,7 +12,7 @@
 					<div class="dropdown user-pro-body">
 						<div class="">
 							@if(auth()->user()->image)
-							<img alt="user-img" class="avatar avatar-xl brround" src="{{URL::asset('storage/' . auth()->user()->image)}}"><span class="avatar-status profile-status bg-green"></span>
+							<img alt="user-img" class="avatar avatar-xl brround" src="{{asset('storage/' . auth()->user()->image)}}"><span class="avatar-status profile-status bg-green"></span>
 							@else
 							<img alt="user-img" class="avatar avatar-xl brround" src="{{URL::asset('assets/img/faces/3.jpg')}}"><span class="avatar-status profile-status bg-green"></span>
 							@endif

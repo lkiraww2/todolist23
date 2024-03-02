@@ -25,14 +25,22 @@ class Addproduct extends Controller
 
         $imagePath = $request->file('image')->store('uploads', 'public');
         
-        Product::create([
-            'image' => $imagePath,
-            'name' => $request->name,
-            'company' => $request->company,
-            'creadt_at' => Auth::user()->name,
-        ])->save();
+        $product = new Product;
+        $product->fill($request->only('name','company'));
+        $product->image = $imagePath;
+        $product->creadt_at = auth()->name();
+        if($product->save()){
+            return redirect('/products')->with('success', 'Product added successfully.');
+        }
+        abort(401);
+        // Product::create([
+        //     'image' => $imagePath,
+        //     'name' => $request->name,
+        //     'company' => $request->company,
+        //     'creadt_at' => Auth::user()->name,
+        // ])->save();
 
         
-        return redirect('/products')->with('success', 'Product added successfully.');
+
     }
 }

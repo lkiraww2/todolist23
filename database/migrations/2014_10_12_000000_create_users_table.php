@@ -20,7 +20,9 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->boolean('registered')->default(false);
+            // created_by
             $table->string('creadt_by', 999)->nullable(); 
+            // ///////////
             $table->binary('image')->nullable();
         });
     }

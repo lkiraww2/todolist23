@@ -53,17 +53,17 @@
 							<div class="dropdown main-profile-menu nav nav-item nav-link">
 								@if(auth()->user()->image)
 
-								<a class="profile-user d-flex" href=""><img alt="" src="{{URL::asset('storage/' . auth()->user()->image)}}"></a>
+								<a class="profile-user d-flex" href=""><img alt="" src="{{asset('storage/' . auth()->user()->image)}}"></a>
 								@else
-								<a class="profile-user d-flex" href=""><img alt="" src="{{URL::asset('assets/img/faces/3.jpg')}}"></a>
+								<a class="profile-user d-flex" href=""><img alt="" src="{{asset('assets/img/faces/3.jpg')}}"></a>
 								@endif
 								<div class="dropdown-menu">
 									<div class="main-header-profile bg-primary p-3">
 										<div class="d-flex wd-100p">
 											@if(auth()->user()->image)
-											<div class="main-img-user"><img alt="" src="{{URL::asset('storage/' . auth()->user()->image)}}" class=""></div>
+											<div class="main-img-user"><img alt="" src="{{asset('storage/' . auth()->user()->image)}}" class=""></div>
 											@else 
-											<div class="main-img-user"><img alt="" src="{{URL::asset('assets/img/faces/3.jpg')}}" class=""></div>
+											<div class="main-img-user"><img alt="" src="{{asset('assets/img/faces/3.jpg')}}" class=""></div>
 											@endif
 											<div class="mr-3 my-auto">
 												@php
